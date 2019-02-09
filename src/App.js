@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import AppBar from "./Components/AppBar";
 import LayoutScreen from "./Components/LayoutScreen";
 import InputScreen from "./Components/InputScreen";
-import './App.css';
+import './Views/App.css';
 
 class App extends Component {
   constructor(props) {
@@ -12,7 +12,6 @@ class App extends Component {
 
       },
     }
-    this.updateJson=this.updateJson.bind(this);
   }
   updateJson(jsonValue) {
     this.setState({
@@ -26,9 +25,8 @@ class App extends Component {
         <AppBar />
         <div className="app-body">
           <LayoutScreen jsonValue={jsonValue} />
-          <InputScreen updateJson={this.updateJson} />
+          <InputScreen updateJson={()=>this.updateJson} />
         </div>
-        {console.log(this.state.jsonValue)}
       </React.Fragment>
 
     );
