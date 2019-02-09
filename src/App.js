@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import AppBar from "./Components/AppBar";
+import LayoutScreen from "./Components/LayoutScreen";
+import InputScreen from "./Components/InputScreen";
 import './App.css';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      jsonValue: {
+
+      },
+    }
+    this.updateJson=this.updateJson.bind(this);
+  }
+  updateJson(jsonValue) {
+    this.setState({
+      jsonValue: jsonValue,
+    });
+  }
   render() {
+    let jsonValue = this.state.jsonValue;
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <React.Fragment>
+        <AppBar />
+        <div className="app-body">
+          <LayoutScreen jsonValue={jsonValue} />
+          <InputScreen updateJson={this.updateJson} />
+        </div>
+        {console.log(this.state.jsonValue)}
+      </React.Fragment>
+
     );
   }
 }
