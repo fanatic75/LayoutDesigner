@@ -1,36 +1,31 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import AppBar from "./Components/AppBar";
 import LayoutScreen from "./Components/LayoutScreen";
 import InputScreen from "./Components/InputScreen";
 import './Views/App.css';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      jsonValue: {
+//starting of App
 
-      },
-    }
-  }
-  updateJson(jsonValue) {
-    this.setState({
-      jsonValue: jsonValue,
-    });
-  }
-  render() {
-    let jsonValue = this.state.jsonValue;
-    return (
-      <React.Fragment>
-        <AppBar />
-        <div className="app-body">
-          <LayoutScreen jsonValue={jsonValue} />
-          <InputScreen updateJson={()=>this.updateJson} />
-        </div>
-      </React.Fragment>
+function App(){
+  
+  //using jsonValue as a global state to update in both of the screens.
+  //using updateJson function to edit the jsonValue as the user types.
+  const [jsonString,updateJsonString]=useState("");
 
-    );
+  //function is being to update json global state value from child component.
+  function handleUpdateJsonString(jsonString){
+    updateJsonString(jsonString);
   }
+
+
+  return(
+    <React.Fragment>
+      <AppBar />
+      <div className="app-body">
+        <LayoutScreen jsonString={jsonString} /> {/* Layout Screen component taking jsonValue as a prop*/}
+        <InputScreen jsonString={jsonString} handleUpdateJsonString={handleUpdateJsonString}/> {/* Input Screen component taking jsonValue as a prop and the callback function to update the prop.*/}
+      </div>
+    </React.Fragment>
+  );
 }
-
 export default App;

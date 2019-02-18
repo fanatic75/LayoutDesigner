@@ -7,7 +7,9 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = {
   root: {
-    flexGrow: 1
+    flexGrow: 1,
+    maxWidth:"100%",
+    height:"10vh"
   },
   heading: {
     margin: "auto"
