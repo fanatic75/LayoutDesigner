@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../Views/inputscreen.css";
 import { withStyles } from "@material-ui/core/styles";
@@ -24,68 +24,37 @@ const styles = theme => ({
           },
     }
 });
-function tryParseJSON (jsonString){
-    try {
-        var o = JSON.parse(jsonString);
-
-        // Handle non-exception-throwing cases:
-        // Neither JSON.parse(false) or JSON.parse(1234) throw errors, hence the type-checking,
-        // but... JSON.parse(null) returns null, and typeof null === "object", 
-        // so we must check for that, too. Thankfully, null is falsey, so this suffices:
-        if (o && typeof o === "object") {
-            return o;
-        }
-    }
-    catch (e) { 
-      console.log("Not a json. Error in "+e);
-    }
-
-    return false;
-};
-
-class InputScreen extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            jsonValue: "",
-        }
-    }
+function InputScreen(props) {
+    const [jsonValue,updateJson] = useState(props.jsonValue);
+    const {classes}=props;
     
-
-    handleChange(e) {
-        if (!tryParseJSON(e.target.value)) {
-           
-        } else {
-            this.setState({
-                jsonValue: e.target.value,
-            });
-            this.props.updateJson(this.state.jsonValue);
-        }
+    function handleChange(e){  //handle change function for input text area.      
+        updateJson(e.target.value.toString());
+        props.handleUpdateJsonString(e.target.value.toString());
+                  
     }
-
-    render() {
-        const { classes } = this.props;
-        return (
-            <div className="container">
-                <Typography className={classes.heading} component="h3">
-                    Json Data
-            </Typography>
-                <Paper className={classes.jsonfield} elevation={1}>
-                    <textarea
-                        type="text"
-                        placeholder="Enter the Json data to make a Layout."
-                        className={classes.textField}
-                        onChange={e => this.handleChange(e)}
-                    />
-                </Paper>
-
-            </div>
-        );
-    }
+    return (
+        <div className="container">
+            <Typography className={classes.heading} component="h3">
+                Json Data
+        </Typography>
+            <Paper className={classes.jsonfield} elevation={1}>
+                <textarea
+                    type="text"
+                    placeholder="Enter the Json data to make a Layout."
+                    className={classes.textField}
+                    onChange={e => handleChange(e)}
+                    value={jsonValue}
+                />
+            </Paper>
+        </div>
+    );
 }
 
 InputScreen.propTypes = {
     classes: PropTypes.object.isRequired,
-    updateJson: PropTypes.func.isRequired
+    jsonValue:PropTypes.string,
+    handleUpdateJsonString: PropTypes.func.isRequired
+
 }
 export default withStyles(styles)(InputScreen);

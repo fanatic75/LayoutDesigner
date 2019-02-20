@@ -2,7 +2,7 @@
   display:grid;
   grid-template-columns: 60fr 40fr;
   grid-column-gap:10px;
-  padding:1%;
+  padding:1vh;
 }
 
 
