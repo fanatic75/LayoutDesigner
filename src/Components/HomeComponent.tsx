@@ -74,7 +74,7 @@ function HomeComponent(props: any) {
         <div id="layoutView" className="layoutcontainer">
             <div className="page-room">
                 <div className="popout" id="home-layout">
-                    <svg id="home-blue-print" preserveAspectRatio="xMinYMin meet" version="1.1" viewBox="0 0 100 100" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <svg id="home-blue-print" preserveAspectRatio="xMinYMin meet" version="1.1" viewBox="0 0 100 100" width="100%" height="80vh" xmlns="http://www.w3.org/2000/svg">
                         {
                             //@ts-ignore
                             rooms!==null? rooms.map((room)=> ( <Room2D room={room} key={room.roomId} actions={actions}/>)):null

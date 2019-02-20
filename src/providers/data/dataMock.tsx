@@ -29,11 +29,11 @@ rooms.push({
   "coordinates": {
     "type": "rect",
     "origin": {
-      "x": 15,
-      "y": 0
+      "x": 1,
+      "y": 1
     },
-    "w": 75,
-    "h": 5
+    "w": 98,
+    "h": 98
   },
   
   "roomId": 1,
