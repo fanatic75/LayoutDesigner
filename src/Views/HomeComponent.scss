@@ -1,0 +1,538 @@
+#layoutView {
+
+    height: 100vw;
+    //max-width:400px;
+    //position: relative;
+    //height: 250px;
+    //
+    //.page-room {
+    //  text-align: center;
+    //
+    //  svg {
+    //    height: 220px;
+    //    width: 220px;
+    //  }
+    //
+    //  .room-layout {
+    //    text-align: center;
+    //  }
+    //}
+  
+    #home-layout {
+      width: 100%;
+      max-height: 100%;
+      vertical-align: middle;
+  
+      #device-numbers {
+  
+        text {
+          -webkit-transition: all 2s ease;
+          -moz-transition: all 2s ease;
+          transition: all 2s ease;
+          text-anchor: "middle";
+          stroke: black;
+          stroke-width: 0.02px;
+          font-size: 23%;
+        }
+  
+        .text-hover {
+          font-size: 45%;
+        }
+      }
+  
+      .room {
+        fill:white;
+        stroke-width:1.5%;
+        stroke:#644a4a
+      }
+  
+      .bedroom {
+        fill: #DEB887;
+  
+        //background:
+        //  linear-gradient(135deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px),
+        //  linear-gradient(225deg, #708090 22px, #d9ecff 22px, #d9ecff 24px, transparent 24px, transparent 67px, #d9ecff 67px, #d9ecff 69px, transparent 69px)0 64px;
+        //background-color:#708090;
+        //background-size: 500px 500px
+      }
+  
+      .livingroom {
+        fill: #FFF8DC
+      }
+  
+      .bathroom {
+        fill: #CD853F
+      }
+  
+      .balcony {
+        fill: #cccccc
+      }
+  
+      .kitchen {
+        fill: #BC8F8F
+      }
+  
+      .outside {
+        fill : white
+      }
+  
+      .door {
+        stroke:white;
+        stroke-width:1.5%;
+      }
+  
+      .entranceText {
+        text-anchor: middle;
+        fill: #000000;
+        font-size: 3px;
+        -webkit-text-size-adjust: none;
+      }
+  
+      .device-marking-green {
+        stroke:black;
+        stroke-width:0.02;
+        fill:#3df332
+      }
+  
+      .device-marking-grey {
+        stroke:black;
+        stroke-width:0.02;
+        fill:grey
+      }
+    }
+  
+    #rooms-layout {
+  
+      .current-layout-name-div {
+        background-color: #f2f2f2;
+        font-size: medium;
+        text-align: center;
+      }
+  
+      .room-layout {
+        width: 100%;
+        height: 100%;
+        //margin-top: 2%;
+  
+        svg{
+          transition: 1s opacity;
+        }
+        .wall {
+          stroke-width:0.5%;
+          stroke:#EDBB59;
+          &.wall-left{
+            fill:url(#wallGradientLeft);
+          }
+          &.wall-right{
+            fill:url(#wallGradientRight);
+          }
+          &.wall-top{
+            fill:url(#wallGradientTop);
+          }
+          &.wall-bottom{
+            fill:url(#wallGradientBottom);
+          }
+        }
+  
+        .floor {
+          //fill: #cccccc;
+          fill:#DEB887;
+          stroke-width:0%;
+          stroke:rgb(255,255,255);
+          &.wooden{
+            fill:url(#woodenFloor);
+          }
+          &.marble{
+            fill:url(#marbleFloor);
+          }
+        }
+  
+        .door {
+          fill:#CD853F;
+          stroke-width:0.5%;
+          stroke:rgb(0,0,0)
+        }
+  
+        .border {
+          fill:#DEB887;
+          stroke-width:0.5%;
+          stroke:#EDBB59;
+        }
+        rect{
+          transform-origin: center;
+        }
+  
+        .socket{
+          width: 10%;
+          height: 10%;
+          fill: url(#socket);
+          &.on{
+            fill:url(#socketOn);
+          }
+        }
+  
+        .tubelight{
+          width:30%;
+          height:10%;
+          fill: url(#tubelight);
+          &.on{
+            fill: url(#tubelightOn);
+          }
+        }
+  
+        .roof {
+          opacity: 0.2;
+          fill: grey
+        }
+  
+        .fan{
+          fill: url(#fan);
+          width:20%;
+          height:20%;
+          &.on{
+            fill: url(#fanOn);
+            -webkit-animation: spin1 1s infinite linear;
+            -moz-animation: spin1 1s infinite linear;
+            -o-animation: spin1 1s infinite linear;
+            -ms-animation: spin1 1s infinite linear;
+            animation: spin1 1s infinite linear;
+            display: block;
+            transform-origin: center;
+          }
+        }
+        .wall-lamp{
+          width: 10%;
+          height: 10%;
+          fill: url(#wallLamp);
+          &.on{
+            fill: url(#wallLampOn);
+          }
+        }
+        .bulb{
+          width:10%;
+          height:10%;
+          fill: url(#bulb);
+          &.on{
+            fill:url(#bulbOn);
+          }
+        }
+  
+        .water-pump{
+          width:10%;
+          height:10%;
+          fill: url(#water-pump);
+          &.on{
+            fill:url(#water-pumpOn);
+          }
+        }
+  
+        .chandelier{
+          width:15%;
+          height:15%;
+          fill: url(#chandelier);
+          &.on{
+            fill:url(#chandelierOn);
+          }
+        }
+  
+        .airconditioner{
+          width:30%;
+          height:30%;
+          fill: url(#airconditioner);
+          &.on{
+            fill:url(#airconditionerOn);
+          }
+        }
+  
+        .geyser{
+          width:20%;
+          height:13%;
+          fill: url(#geyser);
+          &.on{
+            fill:url(#geyserOn);
+          }
+        }
+  
+        .refrigerator{
+          width:30%;
+          height:30%;
+          fill: url(#refrigerator);
+          &.on{
+            fill:url(#refrigeratorOn);
+          }
+        }
+  
+        .television{
+          width:25%;
+          height:20%;
+          fill: url(#television);
+          &.on{
+            fill:url(#televisionOn);
+          }
+        }
+  
+        .microwave{
+          width:25%;
+          height:20%;
+          fill: url(#microwave);
+          &.on{
+            fill:url(#microwaveOn);
+          }
+        }
+  
+        .water-purifier{
+          width:25%;
+          height:20%;
+          fill: url(#water-purifier);
+          &.on{
+            fill:url(#water-purifierOn);
+          }
+        }
+  
+        .toilet-seat{
+          fill: url(#bed);
+        }
+        .bathroom-sink{
+          fill: url(#bed);
+        }
+        .bed{
+          fill: url(#bed);
+        }
+        .bedSingle{
+          fill: url(#bedSingle);
+        }
+        .sofa-1seat{
+          fill: url(#sofa-1seat);
+        }
+        .sofa-2seat{
+          fill: url(#sofa-2seat);
+        }
+        .table{
+          fill: url(#table);
+        }
+        .dining-set{
+          fill: url(#dining-set);
+        }
+  
+        #device-images{
+          perspective: 100px;
+          perspective-origin: center;
+        }
+        #device-images-on {
+          .device-on {
+            visibility: visible;
+          }
+          .device-off {
+            visibility: hidden;
+          }
+        }
+      }
+      /**
+       * Room specific changes start here
+       */
+    }
+  
+    svg text {
+      cursor: default;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+  }
+  @-webkit-keyframes spin1 {
+    0% { -webkit-transform: rotate(0deg);}
+    100% { -webkit-transform: rotate(360deg);}
+  }
+  @-moz-keyframes spin1 {
+    0% { -moz-transform: rotate(0deg);}
+    100% { -moz-transform: rotate(360deg);}
+  }
+  @-o-keyframes spin1 {
+    0% { -o-transform: rotate(0deg);}
+    100% { -o-transform: rotate(360deg);}
+  }
+  @-ms-keyframes spin1 {
+    0% { -ms-transform: rotate(0deg);}
+    100% { -ms-transform: rotate(360deg);}
+  }
+  @keyframes spin1 {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+  }
+  .shadowed {
+    -webkit-filter: drop-shadow(12px 12px 25px rgba(0,0,0,0.5));
+    filter: url(#drop-shadow);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+    filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=12, OffY=12, Color='#444')";
+  }
+  
+  .page-home {
+  
+    background-color: #fff;
+  
+    $colors: (
+      primary:    #387ef5,
+      secondary:  #32db64,
+      danger:     #f53d3d,
+      light:      #f4f4f4,
+      dark:       #f4f4f4
+    );
+  
+    p {
+      color: red;
+    }
+  
+    .current-layout-name-div {
+      background-color: #f2f2f2;
+      font-size: medium;
+      text-align: center;
+    }
+  
+    #roomSelector {
+      background-color: #a6a6a6;
+      overflow: auto;
+      white-space: nowrap;
+      height: 10%;
+      padding-left: 1%;
+  
+      div {
+        display: inline-block;
+        max-height: 100%;
+        height: 90%;
+  
+        label {
+          vertical-align: middle;
+        }
+      }
+  
+      div:focus {
+        background-color: #777;
+      }
+    }
+  
+    .icons-scroller {
+      background-color: #a6a6a6;
+      overflow: auto;
+      white-space: nowrap;
+      height: 10%;
+      padding-left: 1%;
+  
+      div {
+        display: inline-block;
+        max-height: 100%;
+        height: 90%;
+  
+        img {
+          color: white;
+          padding: 5% 5% 5% 10%;
+          text-decoration: none;
+          max-height: 100%;
+          height: auto;
+        }
+  
+        label {
+          vertical-align: bottom;
+        }
+  
+        .device-number {
+          vertical-align: top;
+          padding-left: 4%;
+        }
+      }
+  
+      .icon-click {
+        background-color: #777;
+      }
+  
+      div:hover {
+        background-color: #777;
+      }
+    }
+  }
+  
+  .display-none {
+    display: none;
+  }
+  
+  .rotate-90 {
+    transform: rotateZ(-90deg);
+  }
+  
+  .rotate-180 {
+    transform: rotateZ(180deg);
+  }
+  
+  
+  .rotate-270 {
+    transform: rotateZ(90deg);
+  }
+  
+  .scale-half {
+    transform: scale(0.5,0.5);
+  }
+  
+  .rotate-off {
+  
+  }
+  
+  .rotate-on
+  {
+    -webkit-animation: spin1 2s infinite linear;
+    -moz-animation: spin1 2s infinite linear;
+    -o-animation: spin1 2s infinite linear;
+    -ms-animation: spin1 2s infinite linear;
+    animation: spin1 2s infinite linear;
+    display: block;
+  }
+  
+  @-webkit-keyframes spin1 {
+    0% { -webkit-transform: rotate(0deg);}
+    100% { -webkit-transform: rotate(360deg);}
+  }
+  @-moz-keyframes spin1 {
+    0% { -moz-transform: rotate(0deg);}
+    100% { -moz-transform: rotate(360deg);}
+  }
+  @-o-keyframes spin1 {
+    0% { -o-transform: rotate(0deg);}
+    100% { -o-transform: rotate(360deg);}
+  }
+  @-ms-keyframes spin1 {
+    0% { -ms-transform: rotate(0deg);}
+    100% { -ms-transform: rotate(360deg);}
+  }
+  @keyframes spin1 {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+  }
+  
+  .popout {
+    animation: popout 1s ease;
+    -webkit-animation: popout 1s ease;
+  }
+  @keyframes popout {
+    from{transform:scale(0)}
+    to{transform:scale(1)}
+  }
+  @-webkit-keyframes popout {
+    from{-webkit-transform:scale(0)}
+    to{-webkit-transform:scale(1)}
+  }
+  
+  .popin {
+    animation: popin 1s ease;
+    -webkit-animation: popin 1s ease;
+  }
+  @keyframes popin {
+    from{transform:scale(1)}
+    to{transform:scale(0)}
+  }
+  @-webkit-keyframes popin {
+    from{-webkit-transform:scale(1)}
+    to{-webkit-transform:scale(0)}
+  }
+  .device-greyout {
+    opacity: 0.4;
+  }
+  

@@ -22,6 +22,7 @@ const styles = theme => ({
         "&::-webkit-scrollbar":{
             background:"transparent",
           },
+          resize:"none",
     }
 });
 function InputScreen(props) {

@@ -22,23 +22,25 @@ rooms.push({
 });
 
 rooms.push({
-  type: 'balcony',
-  label: {
-    name: 'Balcony',
+  "type": "balcony",
+  "label": {
+    "name": "Balcony"
   },
-  coordinates: {
-    type: 'rect',
-    origin: {
-      x: 15,
-      y: 0,
+  "coordinates": {
+    "type": "rect",
+    "origin": {
+      "x": 15,
+      "y": 0
     },
-    w: 75,
-    h: 5,
+    "w": 75,
+    "h": 5
   },
-  roomId: 1,
-  active: false,
-  floor: 'wooden',
+  
+  "roomId": 1,
+  "active": false,
+  "floor": "wooden"
 });
+
 rooms.push({
   type: 'bedroom',
   label: {
@@ -217,22 +219,22 @@ rooms.push({
 });
 
 rooms.push({
-  type: 'bedroom',
-  label: {
-    name: '',
+  "type": "bedroom",
+  "label": {
+    "name": "haha"
   },
-  coordinates: {
-    type: 'rect',
-    origin: {
-      x: 35,
-      y: 25,
+  "coordinates": {
+    "type": "rect",
+    "origin": {
+      "x": 35,
+      "y": 25
     },
-    w: 10,
-    h: 10,
+    "w": 10,
+    "h": 10
   },
-  roomId: 5,
-  active: true,
-  floor: 'wooden',
+  "roomId": 5,
+  "active": true,
+  "floor": "wooden"
 });
 
 rooms.push({
