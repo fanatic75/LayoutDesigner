@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
-import HomeComponent from "./HomeComponent";
+import HomeComponent from "./HomeComponent/HomeComponent";
 
 
 const styles = theme => ({
@@ -37,7 +37,30 @@ function tryParseJSON (jsonString){
 };
 
 function LayoutScreen(props){
-  const[jsonValue,updateJson]=useState({});
+  const initialObject={
+      "rooms":[  
+      {
+        "type": "balcony",
+        "label":{
+          "name":"FLAT"
+  },
+        "coordinates": {
+          "type": "rect",
+          "origin": {
+            "x": 1,
+            "y": 1
+          },
+          "w": 98,
+          "h": 98
+        },
+        
+        "roomId": 1,
+        "active": false,
+        "floor": "wooden"
+      }]
+      }
+  
+  const[jsonValue,updateJson]=useState(initialObject);
   useEffect(()=>{
     handleChange();
   },[props.jsonString]);
@@ -54,7 +77,7 @@ function LayoutScreen(props){
   return(
 <React.Fragment>
         <Paper className={classes.root} elevation={1} >
-          <HomeComponent jsonValue={jsonValue}/> 
+          <HomeComponent currentRoom={props.currentRoom} updateCurrentRoom={props.updateCurrentRoom} jsonValue={jsonValue}/> 
         </Paper>
       </React.Fragment>
         

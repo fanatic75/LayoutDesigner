@@ -49,6 +49,7 @@
       x: number,
       y: number,
     };
+    id:number,
     length: number;
     height?: number;
     color?: string;
