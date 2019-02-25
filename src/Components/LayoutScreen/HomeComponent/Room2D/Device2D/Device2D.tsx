@@ -8,17 +8,7 @@ export default function Device2D(props:any){
           room.coordinates as RoomRect :
           RoomHelper.getBoundingRect(Plotter.getPointsFromString((room.coordinates as RoomPoly).points));
       }
-      const tempDevice=[
-
-        {
-            type: 'wall_lamp',
-            x: 8,
-            y: 45,
-            rotate: 270,
-            deviceId: 3,
-            scale: 1,
-          }
-      ]
+     
     const [room,updateRoom]=useState(props.room.coordinates);
     const [devices,updateDevices]=useState([]);
     useEffect(()=>{
