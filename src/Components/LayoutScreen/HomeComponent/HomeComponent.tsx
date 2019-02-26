@@ -8,7 +8,7 @@ import "../../../Views/Main.scss";
 import Plotter from "../../../roomHelper/Plotter";
 import SvgPattern from "./SvgPattern";
 
-function getDoorsForRoom(doors: Door[], room: RoomData): Door[][] {
+/** function getDoorsForRoom(doors: Door[], room: RoomData): Door[][] {
     const doorsForRoom: Door[][] = [];
     if (room.coordinates !== undefined) {
         const roomPolygon = room.coordinates.type === 'rect' ? Plotter.rectToPolygon(room.coordinates) : Plotter.getPointsFromString(room.coordinates.points);
@@ -37,7 +37,7 @@ function getDoorsForRoom(doors: Door[], room: RoomData): Door[][] {
     }
     return doorsForRoom;
 
-}
+}*/
 
 
 function HomeComponent(props: any) {
