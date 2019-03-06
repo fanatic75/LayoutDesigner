@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import "../Views/inputscreen.css";
+import "../../Views/inputscreen.css";
 import { withStyles } from "@material-ui/core/styles";
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
@@ -22,12 +22,16 @@ const styles = theme => ({
         "&::-webkit-scrollbar":{
             background:"transparent",
           },
+          resize:"none",
     }
 });
 function InputScreen(props) {
-    const [jsonValue,updateJson] = useState(props.jsonValue);
+    const [jsonString,updateJson] = useState(props.jsonString);
     const {classes}=props;
-    
+    useEffect(()=>{
+        updateJson(props.jsonString)
+    },[props.jsonString]);
+
     function handleChange(e){  //handle change function for input text area.      
         updateJson(e.target.value.toString());
         props.handleUpdateJsonString(e.target.value.toString());
@@ -44,7 +48,7 @@ function InputScreen(props) {
                     placeholder="Enter the Json data to make a Layout."
                     className={classes.textField}
                     onChange={e => handleChange(e)}
-                    value={jsonValue}
+                    value={jsonString}
                 />
             </Paper>
         </div>
@@ -53,7 +57,7 @@ function InputScreen(props) {
 
 InputScreen.propTypes = {
     classes: PropTypes.object.isRequired,
-    jsonValue:PropTypes.string,
+    jsonString:PropTypes.string.isRequired,
     handleUpdateJsonString: PropTypes.func.isRequired
 
 }
