@@ -1,8 +1,10 @@
+
   //@ts-ignore
   interface Point {
     x: number;
     y: number;
   }
+  
   interface RoomData {
     coordinates: RoomRect|RoomPoly;
     type: 'bedroom' | 'livingroom' | 'bathroom' | 'balcony' | 'kitchen' | 'outside' | 'stairs';

@@ -43,6 +43,7 @@ import SvgPattern from "./SvgPattern";
 function HomeComponent(props: any) {
     const [rooms, updateRooms] = useState(null);
     const [doors, updateDoors] = useState(null);
+    let room3d=props.currentRoom;
 
 
 
@@ -56,7 +57,7 @@ function HomeComponent(props: any) {
                 updateRooms(data.rooms);
             }
         })
-
+       room3d=props.currentRoom;
 
 
     });
@@ -83,11 +84,11 @@ function HomeComponent(props: any) {
                         }
 
                     </svg>
-                    <div className={props.currentRoom === null ? "display-none popout" : "popout"} id="rooms-layout">
+                    <div className={room3d === null ? "display-none popout" : "popout"} id="rooms-layout">
                    
                    {
                         //@ts-ignore
-                       rooms!==null?rooms.map((room)=>(<Room3D key={room.roomId}className={props.currentRoom!==room.roomId?"display-none room-layout":"room-layout"}/>)):null
+                      room3d!==null&&room3d.coordinates!==null&&<Room3D room3d={room3d} className="room-layout"/>
                    }
                    
                     

@@ -6,7 +6,7 @@ export default function Room2D(props:any){
 
     const {room}=props;
     return(
-        <g  onClick={()=>props.updateCurrentRoom(room.roomId.toString())} id={room.roomId!==undefined?room.roomId:null} >
+        <g  onClick={()=>room.active===true?props.updateCurrentRoom(room):false} id={room.roomId!==undefined?room.roomId:null} >
         {
                 room.coordinates!==undefined&&room.coordinates.type==="rect"&&         
                     <rect 

@@ -7,7 +7,9 @@ export default class Plotter {
     return pts;
   }
   static getStringFromPoints(points: Point[]): string {
+    console.log(points);
     return points.map((point) => point.x + ',' + point.y).join(' ');
+    
   }
 
   static rectToPolygon(rectangle: RoomRect): Point[] {
